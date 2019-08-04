@@ -3,6 +3,12 @@ package pl.sda.lambda;
 
 import java.util.*;
 
+
+@FunctionalInterface
+interface Square{
+   int square(int x);
+}
+
 public class App
 {
     public static void main( String[] args )
@@ -29,6 +35,11 @@ public class App
         });
 
         System.out.println(SampleData.membersOfTheBeatles);
+
+
+        System.out.println("sprawdzam proste działanie na lambda");
+        Square s = (int x) -> x*x;
+        System.out.println(s.square(2));
 
     }
 }
